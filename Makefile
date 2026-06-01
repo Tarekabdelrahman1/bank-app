@@ -10,6 +10,9 @@ dropdb:
 sqlc:
 	sqlc generate
 
+test:
+	go test -v -cover ./...
+
 migrateup:
 	migrate -path db/migration -database "postgresql://root:secret@localhost:5432/simple_bank?sslmode=disable" -verbose up
 
